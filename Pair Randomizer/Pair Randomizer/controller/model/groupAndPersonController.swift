@@ -40,6 +40,7 @@ class GroupController{
         for i in pairs.indices{
             if let index = pairs[i].people.firstIndex(of: p){
                 pairs[i].people.remove(at: index)
+                print("removed",i,index)
                 break
             }
         }

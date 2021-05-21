@@ -73,4 +73,9 @@ extension ViewController:  UITableViewDelegate, UITableViewDataSource{
         print(t, GroupController.shared.ungroupedPeople.isEmpty)
         return t
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        GroupController.shared.deleteLoosePerson(GroupController.shared.pairs[indexPath.section].people[indexPath.row])
+        tableView.reloadData()
+        //tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }
